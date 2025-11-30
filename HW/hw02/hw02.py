@@ -32,6 +32,12 @@ def product(n, term):
     162
     """
     "*** YOUR CODE HERE ***"
+    res = 1
+    for i in range(1, n + 1) :
+        res, i = res * term(i), i + 1
+
+    return res
+
 
 
 def accumulate(fuse, start, n, term):
@@ -54,6 +60,12 @@ def accumulate(fuse, start, n, term):
     19
     """
     "*** YOUR CODE HERE ***"
+
+    res = term(start)
+
+    for i in range(start, n) :
+        i, res = i + 1, fuse(res, term(i)) 
+
 
 
 def summation_using_accumulate(n, term):
